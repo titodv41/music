@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dj-library"
+version = "0.2.0"
+description = "A local, reversible music organizer for Rekordbox DJs"
+requires-python = ">=3.10"
+dependencies = ["mutagen==1.47.0"]
+
+[project.scripts]
+dj-library = "djlib.cli:main"
+dj-library-app = "djlib.web:main"
+
+[tool.setuptools.packages.find]
+include = ["djlib*"]
+
+[tool.setuptools.package-data]
+djlib = ["ui.html"]

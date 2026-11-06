@@ -1,0 +1,73 @@
+DJ LIBRARY — INTEL MAC / MACOS MONTEREY
+
+1. Extract this ZIP in Downloads. Keep all of its files together.
+2. Open Terminal and paste:
+
+bash "$HOME/Downloads/DJ-Library/Install.command"
+
+If you extracted it elsewhere, type bash followed by a space, drag Install.command
+from Finder into Terminal, and press Return.
+
+The installer checks its package, installs its private Python environment and
+bundled Soulseek client, creates a Desktop launcher, and opens your browser.
+It does not require the Codex app, Homebrew, Docker, or an administrator password.
+Python 3.10+ must already be installed.
+
+NEXT TIME
+Double-click DJ Library.command on your Desktop. Keep its Terminal window open.
+Press Control-C in Terminal to stop the app and its Soulseek client.
+
+FIRST SCAN
+Choose your audio folder in the browser and click Scan library. Read the report.
+Open Mixed In Key using the button, analyze your source files, and enable writing
+key, BPM and energy to their tags. Rescan after analysis.
+Under Organize, preview the proposed folders, then copy and create a playlist.
+Your original files remain in place. Allow space for the copied library.
+Import the .m3u8 playlist in the organized folder into Rekordbox.
+Cues, grids, playlists and existing Rekordbox references are not migrated.
+
+SOULSEEK
+slskd 0.24.5 is bundled and installed automatically. It uses .NET 8, compatible
+with Monterey. Your Soulseek login is entered locally in the Soulseek tab;
+the password is passed to the child process and not saved by the organizer.
+Quit your other Soulseek client first if it uses the same account.
+Search an artist/track, refresh results, select a version, and queue the download.
+Completed downloads are saved under ~/Music/DJ Inbox.
+Analyze them with Mixed In Key, then scan the inbox and organize them.
+Only obtain music you have permission to download.
+macOS may require you to approve the downloaded executable in Security & Privacy.
+The installer does not disable Gatekeeper or remove quarantine protections.
+
+WHAT IS AND ISN'T AUTOMATED
+Installed: audio-tag reader, browser app, native Intel slskd client, launchers.
+Automated: tag scanning, exact-duplicate detection, folder planning, copying,
+copy verification, playlist export, slskd setup/startup/search/download queues.
+Manual: first launch and macOS permissions, Soulseek login, selecting files
+to download, Mixed In Key analysis/tag writing, Rekordbox playlist import.
+Not implemented: Spotify/SoundCloud account syncing or streaming audio extraction,
+automatic genre classification, automated Mixed In Key GUI control, automatic
+selection of the correct extended mix, or importing previous ChatGPT chats.
+Find Music provides search links and a local wishlist using your artist references.
+
+VALIDATION
+Tests run on Linux with generated tagged audio and the real slskd HTTP API.
+The Intel Mac package is checked against official published download hashes.
+Actual execution on Monterey, Mixed In Key integration, Rekordbox import and
+Soulseek account login/transfers require validation on your Mac.
+
+PRIVACY / DATA
+The organizer binds its HTTP interface to 127.0.0.1 with a per-session token.
+slskd's web API is also bound to 127.0.0.1 with generated authentication.
+The Soulseek peer listener is a separate protocol connection on port 50319.
+No music folders are automatically shared.
+Library reports and copy journals:
+~/Library/Application Support/DJ Library
+App files:
+~/Applications/DJ Library
+No music or credentials are sent to ChatGPT by this app.
+
+THIRD PARTY SOFTWARE
+The package includes unmodified slskd (AGPL-3.0) and mutagen (GPL-2.0-or-later).
+slskd source archive and its license are bundled in vendor/.
+mutagen source archive and its license are bundled in vendor/.
+See THIRD-PARTY.txt for official sources, versions and checksums.

@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.egg-info/
+.DS_Store
+.dj-library/
+build/
+dist/
+vendor/
